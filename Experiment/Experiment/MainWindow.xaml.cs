@@ -182,47 +182,44 @@ namespace Experiment {
 
             resultList = Shuffle(resultList);
 
-            word1.Content = resultList[0];
-            word21.Content = resultList[20];
+            word1.Visibility = Visibility.Hidden;
+            word21.Visibility = Visibility.Hidden;
 
-
-            rememberList.Add(word1);
-
-            for (int i = 1; i < resultList.Count / 2; ++i) {
+            for (int i = 0; i < resultList.Count / 2; ++i) {
                 var word = new CheckBox();
                 word.Content = resultList[i];
                 word.Visibility = Visibility.Visible;
 
                 var margin = word1.Margin;
-                margin.Top += i * 20;
+                margin.Top += i * 25;
                 word.Margin = margin;
                 word.Height = word1.Height;
                 word.Width = word1.Width;
                 word.HorizontalAlignment = HorizontalAlignment.Left;
+                word.RenderTransform = new ScaleTransform(1.5, 1.5);
 
                 RootGrid.Children.Add(word);
 
                 rememberList.Add(word);
             }
 
-            for (int i = 1; i < resultList.Count / 2; ++i) {
+            for (int i = 0; i < resultList.Count / 2; ++i) {
                 var word = new CheckBox();
                 word.Content = resultList[i + resultList.Count / 2];
                 word.Visibility = Visibility.Visible;
 
                 var margin = word21.Margin;
-                margin.Top += i * 20;
+                margin.Top += i * 25;
                 word.Margin = margin;
                 word.Height = word1.Height;
                 word.Width = word1.Width;
                 word.HorizontalAlignment = HorizontalAlignment.Left;
+                word.RenderTransform = new ScaleTransform(1.5, 1.5);
 
                 RootGrid.Children.Add(word);
 
                 rememberList.Add(word);
             }
-
-            rememberList.Add(word21);
         }
 
         public void End()
@@ -232,14 +229,14 @@ namespace Experiment {
 
             for (int i = 0; i < rememberList.Count; ++i) {
                 if (rememberList[i].IsChecked == true) {
-                    var pair = testCase[i];
-                    remembered.Add(pair.word);
+                    remembered.Add(rememberList[i].Content as string);
                 }
             }
 
             var sb = new StringBuilder();
             sb.AppendLine(withImage == true ? "이미지 O" : "이미지 X");
             sb.AppendLine(lang == ExperimentLanguage.English ? "영어" : "베트남어");
+            sb.AppendLine();
 
             foreach (var word in remembered) {
                 sb.AppendLine(word);
