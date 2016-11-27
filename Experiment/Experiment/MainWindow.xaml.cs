@@ -232,9 +232,19 @@ namespace Experiment {
                 }
             }
 
+            int correctCount = 0;
+            var wordList = lang == ExperimentLanguage.English ? engList : vietList;
+
+            foreach (var word in remembered) {
+                if (wordList.Contains(word) == true) {
+                    ++correctCount;
+                }
+            }
+
             var sb = new StringBuilder();
             sb.AppendLine(withImage == true ? "이미지 O" : "이미지 X");
             sb.AppendLine(lang == ExperimentLanguage.English ? "영어" : "베트남어");
+            sb.AppendLine("맞은 개수 : " + correctCount);
             sb.AppendLine();
 
             foreach (var word in remembered) {
