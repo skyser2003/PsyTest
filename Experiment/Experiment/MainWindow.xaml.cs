@@ -42,9 +42,7 @@ namespace Experiment {
         private List<string> engAnswerList = new List<string>();
         private List<string> vietAnswerList = new List<string>();
 
-        private DispatcherTimer timer, timer2;
         private DateTime now;
-
         private bool withImage;
         private ExperimentLanguage lang;
         private IEnumerator next;
@@ -125,9 +123,12 @@ namespace Experiment {
 
         public async void Start()
         {
-            intro.Visibility = Visibility.Hidden;
             button_english.Visibility = Visibility.Hidden;
             button_vietnamese.Visibility = Visibility.Hidden;
+
+            intro.Content = "화면에 제시되는 단어를 최대한 기억해주세요.";
+            await Task.Delay(3000);
+            intro.Visibility = Visibility.Hidden;
 
             border.Visibility = Visibility.Visible;
             image.Visibility = withImage == true ? Visibility.Visible : Visibility.Hidden;
@@ -137,30 +138,22 @@ namespace Experiment {
             int imageTime = int.Parse(intervalList[0]);
             int notShowTime = int.Parse(intervalList[1]);
 
-            timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 0, 0, imageTime + notShowTime);
-            timer.Tick += new EventHandler(Next);
+            while (true) {
+                bool ret = Next(null, null);
 
-            timer2 = new DispatcherTimer();
-            timer2.Interval = new TimeSpan(0, 0, 0, 0, imageTime + notShowTime);
-            timer2.Tick += new EventHandler(Hide);
+                if (ret == false) {
+                    break;
+                }
 
-            timer.Start();
+                await Task.Delay(imageTime);
 
-            Next(null, null);
-
-            await Task.Delay(imageTime);
-
-            Hide(null, null);
-
-            timer2.Start();
+                Hide(null, null);
+                await Task.Delay(notShowTime);
+            }
         }
 
         public void Remember()
         {
-            timer.Stop();
-            timer2.Stop();
-
             border.Visibility = Visibility.Hidden;
             image.Visibility = Visibility.Hidden;
             label.Visibility = Visibility.Hidden;
@@ -269,11 +262,11 @@ namespace Experiment {
             intro.Content = "수고하셨습니다";
         }
 
-        public void Next(object sender, EventArgs arg)
+        public bool Next(object sender, EventArgs arg)
         {
             if (next.MoveNext() == false) {
                 Remember();
-                return;
+                return false;
             }
 
             border.Visibility = Visibility.Visible;
@@ -283,6 +276,8 @@ namespace Experiment {
             var pair = next.Current as ImageWordPair;
             image.Source = pair.image;
             label.Content = pair.word;
+
+            return true;
         }
 
         public void Hide(object sender, EventArgs arg)
