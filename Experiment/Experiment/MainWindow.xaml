@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:Experiment"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+    <Grid Name="RootGrid">
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="77,122,0,0" VerticalAlignment="Top" Width="100" Stretch="Fill"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="213,162,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="intro" Content="Label" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center"  Width="222" Height="177"/>
+        <Button x:Name="button_english" Content="영어" HorizontalAlignment="Left" Margin="154,280,0,0" VerticalAlignment="Top" Width="75" Click="button_english_Click"/>
+        <Button x:Name="button_vietnamese" Content="베트남어" HorizontalAlignment="Left" Margin="301,280,0,0" VerticalAlignment="Top" Width="75" Click="button_vietnamese_Click"/>
+        <Button x:Name="button_end" Content="종료" HorizontalAlignment="Left" Margin="234,280,0,0" VerticalAlignment="Top" Width="75" Click="button_end_Click"/>
+        <CheckBox x:Name="word1" Content="CheckBox" HorizontalAlignment="Left" Margin="77,31,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button_remember_done" Content="완료" HorizontalAlignment="Left" Margin="234,280,0,0" VerticalAlignment="Top" Width="75" Click="button_remember_done_Click"/>
+
     </Grid>
 </Window>
