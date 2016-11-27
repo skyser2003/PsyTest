@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Experiment"
         mc:Ignorable="d"
-        Title="MainWindow" Height="768" Width="1024">
+        Title="MainWindow" Height="768" Width="1200">
     <Grid Name="RootGrid">
-        <Border x:Name="border" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="438" Margin="89,89,0,0" VerticalAlignment="Top" Width="438"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="436" Margin="90,90,0,0" VerticalAlignment="Top" Width="436" Stretch="Fill" OpacityMask="Black"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="724,269,0,0" VerticalAlignment="Top" FontSize="32"/>
-        <Label x:Name="intro" Content="Label" HorizontalAlignment="Center" Margin="174,285,164,275" VerticalAlignment="Center" HorizontalContentAlignment="Center"  Width="678" Height="177" FontSize="20"/>
-        <Button x:Name="button_english" Content="영어" HorizontalAlignment="Left" Margin="300,602,0,0" VerticalAlignment="Top" Width="75" Click="button_english_Click"/>
-        <Button x:Name="button_vietnamese" Content="베트남어" HorizontalAlignment="Left" Margin="685,602,0,0" VerticalAlignment="Top" Width="76" Click="button_vietnamese_Click"/>
-        <Button x:Name="button_end" Content="종료" HorizontalAlignment="Left" Margin="498,602,0,0" VerticalAlignment="Top" Width="75" Click="button_end_Click"/>
-        <CheckBox x:Name="word1" Content="CheckBox" HorizontalAlignment="Left" Margin="300,80,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <Border x:Name="border" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Center" Height="438" Margin="392,33,362,0" VerticalAlignment="Top" Width="438">
+            <Image x:Name="image" Height="436" Width="436" Stretch="Fill" OpacityMask="Black" Margin="1,1,0,0"/>
+        </Border>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Center" Margin="506,503,482,0" VerticalAlignment="Top" FontSize="32" Width="204" HorizontalContentAlignment="Center"/>
+        <Label x:Name="intro" Content="Label" HorizontalAlignment="Center" Margin="174,172,164,388" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Width="678" Height="177" FontSize="20"/>
+        <Button x:Name="button_english" Content="영어" HorizontalAlignment="Center" Margin="398,602,543,0" VerticalAlignment="Top" Width="75" Click="button_english_Click"/>
+        <Button x:Name="button_vietnamese" Content="베트남어" HorizontalAlignment="Center" Margin="590,602,350,0" VerticalAlignment="Top" Width="76" Click="button_vietnamese_Click"/>
+        <Button x:Name="button_end" Content="종료" HorizontalAlignment="Center" Margin="497,602,444,0" VerticalAlignment="Top" Width="75" Click="button_end_Click"/>
+        <CheckBox x:Name="word1" Content="CheckBox" HorizontalAlignment="Center" Margin="274,80,670,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
@@ -24,10 +25,10 @@
                 </TransformGroup>
             </CheckBox.RenderTransform>
         </CheckBox>
-        <Button x:Name="button_remember_done" Content="완료" HorizontalAlignment="Left" Margin="499,602,0,0" VerticalAlignment="Top" Width="74" Click="button_remember_done_Click"/>
-        <Button x:Name="button_with_image" Content="그림 O" HorizontalAlignment="Left" Margin="300,384,0,0" VerticalAlignment="Top" Width="75" Click="button_with_image_Click"/>
-        <Button x:Name="button_without_image" Content="그림 X" HorizontalAlignment="Left" Margin="685,384,0,0" VerticalAlignment="Top" Width="76" Click="button_without_image_Click"/>
-        <CheckBox x:Name="word21" Content="CheckBox" HorizontalAlignment="Left" Margin="685,80,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <Button x:Name="button_remember_done" Content="완료" HorizontalAlignment="Center" Margin="498,602,444,0" VerticalAlignment="Top" Width="74" Click="button_remember_done_Click"/>
+        <Button x:Name="button_with_image" Content="그림 O" HorizontalAlignment="Center" Margin="418,384,534,0" VerticalAlignment="Top" Width="64" Click="button_with_image_Click"/>
+        <Button x:Name="button_without_image" Content="그림 X" HorizontalAlignment="Center" Margin="581,384,370,0" VerticalAlignment="Top" Width="65" Click="button_without_image_Click"/>
+        <CheckBox x:Name="word21" Content="CheckBox" HorizontalAlignment="Center" Margin="713,80,232,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>

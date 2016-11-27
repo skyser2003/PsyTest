@@ -126,8 +126,14 @@ namespace Experiment {
             button_english.Visibility = Visibility.Hidden;
             button_vietnamese.Visibility = Visibility.Hidden;
 
-            intro.Content = "화면에 제시되는 단어를 최대한 기억해주세요.";
+            intro.Content = "화면에 제시되는 것 모두를 최대한 기억해주세요.";
             await Task.Delay(3000);
+
+            intro.Content = "하나의 자극은 5초 간 제시되고";
+            intro.Content += Environment.NewLine;
+            intro.Content += "자극 사이에 2초 간의 휴식이 주어집니다.";
+            await Task.Delay(5000);
+
             intro.Visibility = Visibility.Hidden;
 
             border.Visibility = Visibility.Visible;
