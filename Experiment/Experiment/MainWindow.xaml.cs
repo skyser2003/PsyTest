@@ -100,6 +100,7 @@ namespace Experiment {
             border.Visibility = Visibility.Hidden;
             image.Visibility = Visibility.Hidden;
             label.Visibility = Visibility.Hidden;
+            label_remember.Visibility = Visibility.Hidden;
             button_end.Visibility = Visibility.Hidden;
             word1.Visibility = Visibility.Hidden;
             word21.Visibility = Visibility.Hidden;
@@ -107,7 +108,6 @@ namespace Experiment {
             intro.Visibility = Visibility.Hidden;
             button_english.Visibility = Visibility.Hidden;
             button_vietnamese.Visibility = Visibility.Hidden;
-
         }
 
         public void Prepare()
@@ -163,8 +163,10 @@ namespace Experiment {
             border.Visibility = Visibility.Hidden;
             image.Visibility = Visibility.Hidden;
             label.Visibility = Visibility.Hidden;
-            button_remember_done.Visibility = Visibility.Visible;
 
+            label_remember.Content = "기억나는 단어를 모두 골라주세요";
+            label_remember.Visibility = Visibility.Visible;
+            button_remember_done.Visibility = Visibility.Visible;
             word1.Visibility = Visibility.Visible;
             word21.Visibility = Visibility.Visible;
 
