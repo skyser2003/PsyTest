@@ -5,16 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Experiment"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="768" Width="1024">
     <Grid Name="RootGrid">
-        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="77,122,0,0" VerticalAlignment="Top" Width="100" Stretch="Fill"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="213,162,0,0" VerticalAlignment="Top"/>
+        <Border x:Name="border" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="258" Margin="179,179,0,0" VerticalAlignment="Top" Width="258"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="256" Margin="180,180,0,0" VerticalAlignment="Top" Width="256" Stretch="Fill" OpacityMask="Black"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="724,269,0,0" VerticalAlignment="Top"/>
         <Label x:Name="intro" Content="Label" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center"  Width="222" Height="177"/>
-        <Button x:Name="button_english" Content="영어" HorizontalAlignment="Left" Margin="154,280,0,0" VerticalAlignment="Top" Width="75" Click="button_english_Click"/>
-        <Button x:Name="button_vietnamese" Content="베트남어" HorizontalAlignment="Left" Margin="301,280,0,0" VerticalAlignment="Top" Width="75" Click="button_vietnamese_Click"/>
-        <Button x:Name="button_end" Content="종료" HorizontalAlignment="Left" Margin="234,280,0,0" VerticalAlignment="Top" Width="75" Click="button_end_Click"/>
-        <CheckBox x:Name="word1" Content="CheckBox" HorizontalAlignment="Left" Margin="77,31,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button_remember_done" Content="완료" HorizontalAlignment="Left" Margin="234,280,0,0" VerticalAlignment="Top" Width="75" Click="button_remember_done_Click"/>
+        <Button x:Name="button_english" Content="영어" HorizontalAlignment="Left" Margin="300,602,0,0" VerticalAlignment="Top" Width="75" Click="button_english_Click"/>
+        <Button x:Name="button_vietnamese" Content="베트남어" HorizontalAlignment="Left" Margin="685,602,0,0" VerticalAlignment="Top" Width="76" Click="button_vietnamese_Click"/>
+        <Button x:Name="button_end" Content="종료" HorizontalAlignment="Left" Margin="498,602,0,0" VerticalAlignment="Top" Width="75" Click="button_end_Click"/>
+        <CheckBox x:Name="word1" Content="CheckBox" HorizontalAlignment="Left" Margin="300,160,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button_remember_done" Content="완료" HorizontalAlignment="Left" Margin="499,602,0,0" VerticalAlignment="Top" Width="74" Click="button_remember_done_Click"/>
+        <Button x:Name="button_with_image" Content="그림 O" HorizontalAlignment="Left" Margin="300,384,0,0" VerticalAlignment="Top" Width="75" Click="button_with_image_Click"/>
+        <Button x:Name="button_without_image" Content="그림 X" HorizontalAlignment="Left" Margin="685,384,0,0" VerticalAlignment="Top" Width="76" Click="button_without_image_Click"/>
+        <CheckBox x:Name="word21" Content="CheckBox" HorizontalAlignment="Left" Margin="685,160,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
