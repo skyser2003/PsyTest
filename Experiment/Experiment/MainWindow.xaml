@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="768" Width="1200">
     <Grid Name="RootGrid">
-        <Border x:Name="border" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Center" Height="438" Margin="392,33,362,0" VerticalAlignment="Top" Width="438">
-            <Image x:Name="image" Height="436" Width="436" Stretch="Fill" OpacityMask="Black" Margin="1,1,0,0"/>
+        <Border x:Name="border" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Center" Height="438" Margin="389,75,359,0" VerticalAlignment="Top" Width="438">
+            <Image x:Name="image" Height="436" Width="436" Stretch="Fill" OpacityMask="Black" Margin="0,0,0,0"/>
         </Border>
         <Label x:Name="label" Content="Label" HorizontalAlignment="Center" Margin="392,501,362,0" VerticalAlignment="Top" FontSize="100" Width="438" HorizontalContentAlignment="Center"/>
         <Label x:Name="intro" Content="Label" HorizontalAlignment="Center" Margin="174,172,164,388" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Width="678" Height="177" FontSize="20"/>
