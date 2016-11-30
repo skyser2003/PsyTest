@@ -108,9 +108,10 @@ namespace Experiment {
             intro.Visibility = Visibility.Hidden;
             button_english.Visibility = Visibility.Hidden;
             button_vietnamese.Visibility = Visibility.Hidden;
+            button_start_test.Visibility = Visibility.Hidden;
         }
 
-        public void Prepare()
+        public void PrepareLanguage()
         {
             intro.Visibility = Visibility.Visible;
 
@@ -121,10 +122,26 @@ namespace Experiment {
             button_without_image.Visibility = Visibility.Hidden;
         }
 
-        public async void Start()
+        public void PrepareTest()
         {
             button_english.Visibility = Visibility.Hidden;
             button_vietnamese.Visibility = Visibility.Hidden;
+
+            string text = "언어: ";
+            if (lang == ExperimentLanguage.English) {
+                text += "영어";
+            }
+            else {
+                text += "베트남어";
+            }
+
+            intro.Content = text;
+            button_start_test.Visibility = Visibility.Visible;
+        }
+
+        public async void Start()
+        {
+            button_start_test.Visibility = Visibility.Hidden;
 
             intro.Content = "화면에 제시되는 것 모두를 최대한 기억해주세요.";
             await Task.Delay(3000);
@@ -319,13 +336,15 @@ namespace Experiment {
         private void button_english_Click(object sender, RoutedEventArgs e)
         {
             lang = ExperimentLanguage.English;
-            ShuffleWords(engList);
+
+            PrepareTest();
         }
 
         private void button_vietnamese_Click(object sender, RoutedEventArgs e)
         {
             lang = ExperimentLanguage.Vietnamese;
-            ShuffleWords(vietList);
+
+            PrepareTest();
         }
 
         private void ShuffleWords(List<string> wordList)
@@ -377,14 +396,19 @@ namespace Experiment {
         {
             withImage = true;
 
-            Prepare();
+            PrepareLanguage();
         }
 
         private void button_without_image_Click(object sender, RoutedEventArgs e)
         {
             withImage = false;
 
-            Prepare();
+            PrepareLanguage();
+        }
+
+        private void button_start_test_Click(object sender, RoutedEventArgs e)
+        {
+            ShuffleWords(lang == ExperimentLanguage.English ? engList : vietList);
         }
     }
 }

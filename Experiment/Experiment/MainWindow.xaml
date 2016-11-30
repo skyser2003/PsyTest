@@ -26,6 +26,7 @@
             </CheckBox.RenderTransform>
         </CheckBox>
         <Button x:Name="button_remember_done" Content="완료" HorizontalAlignment="Center" Margin="568,602,550,0" VerticalAlignment="Top" Width="74" Click="button_remember_done_Click"/>
+        <Button x:Name="button_start_test" Content="시작" HorizontalAlignment="Center" Margin="568,602,550,0" VerticalAlignment="Top" Width="74" Click="button_start_test_Click"/>
         <Button x:Name="button_with_image" Content="그림 O" HorizontalAlignment="Center" Margin="418,384,534,0" VerticalAlignment="Top" Width="64" Click="button_with_image_Click"/>
         <Button x:Name="button_without_image" Content="그림 X" HorizontalAlignment="Center" Margin="581,384,370,0" VerticalAlignment="Top" Width="65" Click="button_without_image_Click"/>
         <CheckBox x:Name="word21" Content="CheckBox" HorizontalAlignment="Center" Margin="713,80,232,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
