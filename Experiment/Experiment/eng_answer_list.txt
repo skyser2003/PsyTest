@@ -13,7 +13,7 @@ rock
 hold
 step
 table
-farm
+cafe
 draw
 town
 unit
